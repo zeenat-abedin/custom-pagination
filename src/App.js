@@ -21,7 +21,8 @@ function App() {
   
   console.log(posts)
   return (
-    <div className="container">
+    <div className="container mt-5">
+      <h1 className="text-primary mb-4">Blog Posts</h1>
       <Posts  posts={posts} loading={loading} />
     </div>
   );
