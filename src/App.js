@@ -19,11 +19,14 @@ function App() {
     fetchPosts();
   }, [])
   
-  console.log(posts)
+  const indexOfLastPost = postsPerPage * currentPage
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+
   return (
     <div className="container mt-5">
       <h1 className="text-primary mb-4">Blog Posts</h1>
-      <Posts  posts={posts} loading={loading} />
+      <Posts posts={currentPosts} loading={loading} />
     </div>
   );
 }
